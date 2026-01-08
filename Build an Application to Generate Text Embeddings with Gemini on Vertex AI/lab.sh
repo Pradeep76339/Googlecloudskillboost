@@ -1,0 +1,16 @@
+#Change Project ID or Region
+import vertexai
+from vertexai.language_models import TextEmbeddingModel
+
+def text_embedding(prompt):
+    vertexai.init(project="YOUR_PROJECT_ID", location="us-central1")
+    model = TextEmbeddingModel.from_pretrained("text-embedding-005")
+    embeddings = model.get_embeddings([prompt])
+    vector = embeddings[0].values
+    print(f"Length of embedding vector: {len(vector)}")
+    return vector
+
+if __name__ == "__main__":
+    sample_text = "Natural language processing enables computers to understand human language."
+    print(f"Processing text: '{sample_text}'")
+    text_embedding(sample_text)
