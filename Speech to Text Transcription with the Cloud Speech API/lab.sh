@@ -1,10 +1,11 @@
 #!/bin/bash
 
-<div style="padding: 15px; margin: 10px 0;">
 
-## ☁️ Run in Cloud Shell:
-
-```bash
+# Welcome message
+echo "${CYAN_TEXT}${BOLD_TEXT}==================================================================${RESET_FORMAT}"
+echo "${CYAN_TEXT}${BOLD_TEXT}       INITIATING EXECUTION...  ${RESET_FORMAT}"
+echo "${CYAN_TEXT}${BOLD_TEXT}==================================================================${RESET_FORMAT}"
+echo
 
 cat > prepare_disk.sh <<'EOF_END'
 
@@ -85,5 +86,10 @@ gcloud compute scp prepare_disk.sh linux-instance:/tmp --project=$DEVSHELL_PROJE
 
 gcloud compute ssh linux-instance --project=$DEVSHELL_PROJECT_ID --zone=$ZONE --quiet --command="bash /tmp/prepare_disk.sh"
 
-```
-</div>
+
+# Final message
+echo
+echo "${CYAN_TEXT}${BOLD_TEXT}=======================================================${RESET_FORMAT}"
+echo "${CYAN_TEXT}${BOLD_TEXT}              LAB COMPLETED SUCCESSFULLY!              ${RESET_FORMAT}"
+echo "${CYAN_TEXT}${BOLD_TEXT}=======================================================${RESET_FORMAT}"
+echo
