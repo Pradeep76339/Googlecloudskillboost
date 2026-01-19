@@ -1,26 +1,10 @@
-#!/bin/bash
+---
 
-# Define color variables
-BLACK_TEXT=$'\033[0;90m'
-RED_TEXT=$'\033[0;91m'
-GREEN_TEXT=$'\033[0;92m'
-YELLOW_TEXT=$'\033[0;93m'
-BLUE_TEXT=$'\033[0;94m'
-MAGENTA_TEXT=$'\033[0;95m'
-CYAN_TEXT=$'\033[0;96m'
-WHITE_TEXT=$'\033[0;97m'
+<div style="padding: 15px; margin: 10px 0;">
 
-NO_COLOR=$'\033[0m'
-RESET_FORMAT=$'\033[0m'
+## ☁️ Run in Cloud Shell:
 
-# Define text formatting variables
-BOLD_TEXT=$'\033[1m'
-UNDERLINE_TEXT=$'\033[4m'
-BLINK_TEXT=$'\033[5m'
-REVERSE_TEXT=$'\033[7m'
-
-clear
-
+```bash
 cat > prepare_disk.sh <<'EOF_END'
 
 gcloud services enable apikeys.googleapis.com
@@ -100,10 +84,10 @@ gcloud compute scp prepare_disk.sh linux-instance:/tmp --project=$DEVSHELL_PROJE
 
 gcloud compute ssh linux-instance --project=$DEVSHELL_PROJECT_ID --zone=$ZONE --quiet --command="bash /tmp/prepare_disk.sh"
 
+```
 
-# Final message
-echo
-echo "${CYAN_TEXT}${BOLD_TEXT}=======================================================${RESET_FORMAT}"
-echo "${CYAN_TEXT}${BOLD_TEXT}              LAB COMPLETED SUCCESSFULLY!              ${RESET_FORMAT}"
-echo "${CYAN_TEXT}${BOLD_TEXT}=======================================================${RESET_FORMAT}"
+</div>
+
+---
+
 
