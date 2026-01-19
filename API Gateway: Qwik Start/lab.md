@@ -1,32 +1,11 @@
-#!/bin/bash
 
-# Define color variables
-BLACK_TEXT=$'\033[0;90m'
-RED_TEXT=$'\033[0;91m'
-GREEN_TEXT=$'\033[0;92m'
-YELLOW_TEXT=$'\033[0;93m'
-BLUE_TEXT=$'\033[0;94m'
-MAGENTA_TEXT=$'\033[0;95m'
-CYAN_TEXT=$'\033[0;96m'
-WHITE_TEXT=$'\033[0;97m'
-TEAL=$'\033[38;5;50m'
 
-# Define text formatting variables
-BOLD_TEXT=$'\033[1m'
-UNDERLINE_TEXT=$'\033[4m'
-BLINK_TEXT=$'\033[5m'
-NO_COLOR=$'\033[0m'
-RESET_FORMAT=$'\033[0m'
-REVERSE_TEXT=$'\033[7m'
 
-clear
+<div style="padding: 15px; margin: 10px 0;">
 
-# Welcome message
-echo "${CYAN_TEXT}${BOLD_TEXT}==================================================================${RESET_FORMAT}"
-echo "${CYAN_TEXT}${BOLD_TEXT}      SUBSCRIBE TECH & CODE- INITIATING EXECUTION...  ${RESET_FORMAT}"
-echo "${CYAN_TEXT}${BOLD_TEXT}==================================================================${RESET_FORMAT}"
-echo
+## ☁️ Run in Cloud Shell:
 
+```bash
 export PROJECT_ID=$(gcloud config get-value project)
 
 gcloud config set compute/region $REGION
@@ -188,13 +167,9 @@ curl -sL $GATEWAY_URL/hello
 
 curl -sL -w "\n" $GATEWAY_URL/hello?key=$API_KEY
 
+```
 
-# Final message
-echo
-echo "${CYAN_TEXT}${BOLD_TEXT}=======================================================${RESET_FORMAT}"
-echo "${CYAN_TEXT}${BOLD_TEXT}              LAB COMPLETED SUCCESSFULLY!              ${RESET_FORMAT}"
-echo "${CYAN_TEXT}${BOLD_TEXT}=======================================================${RESET_FORMAT}"
-echo
-echo "${RED_TEXT}${BOLD_TEXT}${UNDERLINE_TEXT}https://www.youtube.com/@TechCode9${RESET_FORMAT}"
-echo "${GREEN_TEXT}${BOLD_TEXT}Don't forget to Like, Share and Subscribe for more Videos${RESET_FORMAT}"
-echo
+</div>
+
+---
+
