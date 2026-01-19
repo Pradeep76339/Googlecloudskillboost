@@ -53,3 +53,15 @@ gcloud pubsub topics publish MyTopic --message "Publisher thinks Pub/Sub is awes
 # Receive messages
 echo "${CYAN_TEXT}Pulling messages from subscription MySub (press Ctrl+C to stop)...${RESET_FORMAT}"
 python subscriber.py $PROJECT_ID receive MySub
+
+<div style="padding: 15px; margin: 10px 0;">
+
+## ☁️ Run in Cloud Shell:
+
+```bash
+curl -LO raw.githubusercontent.com/prateekrajput08/Arcade-Google-Cloud-Labs/refs/heads/main/Pub-Sub%3A%20Qwik%20Start%20-%20Python/TechCode.sh
+sudo chmod +x TechCode.sh 
+./TechCode.sh
+```
+
+</div>
