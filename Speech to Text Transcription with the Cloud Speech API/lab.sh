@@ -1,10 +1,5 @@
----
+#!/bin/bash
 
-<div style="padding: 15px; margin: 10px 0;">
-
-## ☁️ Run in Cloud Shell:
-
-```bash
 cat > prepare_disk.sh <<'EOF_END'
 
 gcloud services enable apikeys.googleapis.com
@@ -74,7 +69,7 @@ EOF
 curl -s -X POST -H "Content-Type: application/json" --data-binary @request.json \
 "https://speech.googleapis.com/v1/speech:recognize?key=${API_KEY}" > result.json
 
-cat result.json \
+cat result.json
 
 EOF_END
 
@@ -83,11 +78,4 @@ export ZONE=$(gcloud compute instances list linux-instance --format 'csv[no-head
 gcloud compute scp prepare_disk.sh linux-instance:/tmp --project=$DEVSHELL_PROJECT_ID --zone=$ZONE --quiet
 
 gcloud compute ssh linux-instance --project=$DEVSHELL_PROJECT_ID --zone=$ZONE --quiet --command="bash /tmp/prepare_disk.sh"
-
-```
-
-</div>
-
----
-
 
