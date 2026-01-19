@@ -1,3 +1,4 @@
+#!/bin/bash
 
 <div style="padding: 15px; margin: 10px 0;">
 
