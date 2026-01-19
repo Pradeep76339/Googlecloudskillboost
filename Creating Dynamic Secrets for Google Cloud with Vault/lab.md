@@ -153,7 +153,6 @@ vault write gcp/roleset/my-token-roleset \
     secret_type="access_token"  \
     token_scopes="https://www.googleapis.com/auth/cloud-platform" \
     bindings=@bindings.hcl
-
-    ```
+```
 
 </div>
