@@ -1,5 +1,8 @@
 #!/bin/bash
 
+
+echo
+
 cat > prepare_disk.sh <<'EOF_END'
 
 gcloud services enable apikeys.googleapis.com
