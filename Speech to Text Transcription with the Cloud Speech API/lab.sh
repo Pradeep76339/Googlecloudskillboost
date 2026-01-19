@@ -86,5 +86,4 @@ gcloud compute scp prepare_disk.sh linux-instance:/tmp --project=$DEVSHELL_PROJE
 gcloud compute ssh linux-instance --project=$DEVSHELL_PROJECT_ID --zone=$ZONE --quiet --command="bash /tmp/prepare_disk.sh"
 
 ```
-
 </div>
