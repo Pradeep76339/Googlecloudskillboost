@@ -1,5 +1,9 @@
 
+<div style="padding: 15px; margin: 10px 0;">
 
+## ☁️ Run in Cloud Shell:
+
+```bash
 gcloud auth list
 
 curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo apt-key add -
@@ -149,3 +153,7 @@ vault write gcp/roleset/my-token-roleset \
     secret_type="access_token"  \
     token_scopes="https://www.googleapis.com/auth/cloud-platform" \
     bindings=@bindings.hcl
+
+    ```
+
+</div>
