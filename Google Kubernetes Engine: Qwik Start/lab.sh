@@ -4,6 +4,7 @@
 ## ☁️ Run in Cloud Shell:
 
 ```bash
+
 gcloud config set compute/region us-central1
 
 gcloud config set compute/zone us-central1-b
@@ -21,7 +22,9 @@ kubectl get service
 ...
 
 ...bash
+
 #get EXTERNAL-IP and paste
+
 http://[EXTERNAL-IP]:8080
 
 gcloud container clusters delete lab-cluster
