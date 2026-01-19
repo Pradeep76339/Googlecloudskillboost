@@ -18,7 +18,8 @@ def text_embedding(prompt):
 if __name__ == "__main__":
     sample_text = "Natural language processing enables computers to understand human language."
     print(f"Processing text: '{sample_text}'")
-    text_embedding(sample_text)```
+    text_embedding(sample_text)
+```
 
 </div>
 
