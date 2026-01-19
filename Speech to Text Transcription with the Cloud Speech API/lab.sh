@@ -1,7 +1,9 @@
 #!/bin/bash
 
 
-echo
+## ☁️ Run in Cloud Shell:
+
+```bash
 
 cat > prepare_disk.sh <<'EOF_END'
 
@@ -77,7 +79,9 @@ cat result.json
 EOF_END
 
 export ZONE=$(gcloud compute instances list linux-instance --format 'csv[no-heading](zone)')
+```
 
+</div>
 gcloud compute scp prepare_disk.sh linux-instance:/tmp --project=$DEVSHELL_PROJECT_ID --zone=$ZONE --quiet
 
 gcloud compute ssh linux-instance --project=$DEVSHELL_PROJECT_ID --zone=$ZONE --quiet --command="bash /tmp/prepare_disk.sh"
