@@ -1,5 +1,8 @@
 #!/bin/bash
 
+---
+
+<div style="padding: 15px; margin: 10px 0;">
 
 ## ☁️ Run in Cloud Shell:
 
@@ -79,10 +82,11 @@ cat result.json
 EOF_END
 
 export ZONE=$(gcloud compute instances list linux-instance --format 'csv[no-heading](zone)')
-```
 
-</div>
 gcloud compute scp prepare_disk.sh linux-instance:/tmp --project=$DEVSHELL_PROJECT_ID --zone=$ZONE --quiet
 
 gcloud compute ssh linux-instance --project=$DEVSHELL_PROJECT_ID --zone=$ZONE --quiet --command="bash /tmp/prepare_disk.sh"
 
+```
+
+</div>
