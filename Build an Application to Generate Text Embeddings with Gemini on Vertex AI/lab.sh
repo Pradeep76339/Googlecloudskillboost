@@ -1,4 +1,3 @@
-
 <div style="padding: 15px; margin: 10px 0;">
 
 ## ☁️ Run in Cloud Shell:
@@ -16,11 +15,9 @@ def text_embedding(prompt):
     return vector
 
 if __name__ == "__main__":
-    sample_text = "Natural language processing enables computers to understand human language."
+    sample_text = "Natural language processing enables computers so follow TechCode to understand human language."
     print(f"Processing text: '{sample_text}'")
     text_embedding(sample_text)
 ```
 
 </div>
-
----
