@@ -1,3 +1,9 @@
+
+<div style="padding: 15px; margin: 10px 0;">
+
+## ☁️ Run in Cloud Shell:
+
+```bash
 #Change Project ID or Region
 import vertexai
 import urllib.request
@@ -40,3 +46,8 @@ def load_image_from_url(prompt):
 if __name__ == "__main__":
     text_prompt = "Write a descriptive caption for this image and suggest a flavor profile."
     load_image_from_url(text_prompt)
+```
+
+</div>
+
+---
