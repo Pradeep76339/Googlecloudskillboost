@@ -1,67 +1,17 @@
 
-
-
-
-
 <div style="padding: 15px; margin: 10px 0;">
-
 ## ☁️ Run in Cloud Shell:
 
 ```bash
-# Check project ID
-echo "${BLUE_TEXT}Checking Project ID...${RESET_FORMAT}"
-PROJECT_ID=$(gcloud config get-value project)
-echo "${GREEN_TEXT}Current Project ID: ${PROJECT_ID}${RESET_FORMAT}"
+gcloud pubsub topics create myTopic
+gcloud pubsub topics create Test1
+gcloud pubsub topics create Test2
+gcloud pubsub topics list
+gcloud pubsub topics delete Test1
+gcloud pubsub topics delete Test2
+gcloud pubsub topics list
+gcloud  pubsub subscriptions create --topic myTopic mySubscription
 
-# Install virtualenv
-echo "${BLUE_TEXT}Installing virtualenv...${RESET_FORMAT}"
-sudo apt-get update -qq
-sudo apt-get install -y virtualenv
-
-# Create and activate virtual environment
-echo "${BLUE_TEXT}Creating Python virtual environment...${RESET_FORMAT}"
-python3 -m venv venv
-source venv/bin/activate
-
-# Install dependencies
-echo "${BLUE_TEXT}Installing Google Cloud Pub/Sub client library...${RESET_FORMAT}"
-pip install --upgrade pip
-pip install --upgrade google-cloud-pubsub
-
-# Clone sample repository
-echo "${BLUE_TEXT}Cloning Pub/Sub sample repository...${RESET_FORMAT}"
-git clone https://github.com/googleapis/python-pubsub.git
-cd python-pubsub/samples/snippets
-
-# Verify current directory
-echo "${GREEN_TEXT}Current directory: $(pwd)${RESET_FORMAT}"
-
-# Create topic
-echo "${YELLOW_TEXT}Creating Pub/Sub topic: MyTopic${RESET_FORMAT}"
-python publisher.py $PROJECT_ID create MyTopic
-
-# List topics
-echo "${TEAL}Listing all Pub/Sub topics...${RESET_FORMAT}"
-python publisher.py $PROJECT_ID list
-
-# Create subscription
-echo "${YELLOW_TEXT}Creating subscription: MySub${RESET_FORMAT}"
-python subscriber.py $PROJECT_ID create MyTopic MySub
-
-# List subscriptions
-echo "${TEAL}Listing all subscriptions in project...${RESET_FORMAT}"
-python subscriber.py $PROJECT_ID list-in-project
-
-# Publish messages
-echo "${MAGENTA_TEXT}Publishing messages to topic MyTopic...${RESET_FORMAT}"
-gcloud pubsub topics publish MyTopic --message "Hello from Cloud Shell"
-gcloud pubsub topics publish MyTopic --message "Publisher's name is Cloud Student"
-gcloud pubsub topics publish MyTopic --message "Publisher likes to eat pizza"
-gcloud pubsub topics publish MyTopic --message "Publisher thinks Pub/Sub is awesome"
-
-# Receive messages
-echo "${CYAN_TEXT}Pulling messages from subscription MySub (press Ctrl+C to stop)...${RESET_FORMAT}"
-python subscriber.py $PROJECT_ID receive MySub
 ```
 
 </div>
