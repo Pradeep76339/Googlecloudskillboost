@@ -1,8 +1,11 @@
-<div style="padding: 15px; margin: 10px 0;">
+
 
 ## ☁️ Run in Cloud Shell:
 
 ```bash
+# This will automatically have a copy button on GitHub
+export PROJECT_ID=$(gcloud config get-value project)
+echo $PROJECT_ID
 import vertexai
 from vertexai.language_models import TextEmbeddingModel
 
@@ -21,3 +24,5 @@ if __name__ == "__main__":
 ```
 
 </div>
+
+```
